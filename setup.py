@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="TruePigLatin",
-    version="0.0.1",
+    version="0.0.2",
     author="CHUA某人",
     author_email="chua-x@outlook.com",
     description="TruePigLatin ——可能是史上运行速度最快、最准（doge）的Pig Latin翻译器",

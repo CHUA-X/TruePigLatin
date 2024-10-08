@@ -3,8 +3,6 @@
 # TruePigLatin ——可能是史上运行速度最快、最准（doge）的Pig Latin翻译器
 # 用法：import truepiglatin [as tpl];pl = tpl[truepiglatin].translate("这是个示例。This is a EXAMPLE.");print(pl)
 
-import string
-
 
 def translate(msg, dash=False):
     """
@@ -12,13 +10,12 @@ def translate(msg, dash=False):
     参数：dash，控制Pig Latin流派
     """
     vowels = ('a', 'e', 'i', 'o', 'u', 'y')
-    en_letters = frozenset(string.ascii_letters)
     pig_latin = []
 
     for word in msg.split():
         # 分离单词前端的非英文字符
         prefix_non_letters = ''
-        while len(word) > 0 and not word[0] in en_letters:
+        while len(word) > 0 and not word[0].isalpha():
             prefix_non_letters += word[0]
             word = word[1:]
         if len(word) == 0:
@@ -27,7 +24,7 @@ def translate(msg, dash=False):
 
         # 分离单词后端的非英文字符
         suffix_non_letters = ''
-        while not word[-1] in en_letters:
+        while not word[-1].isalpha():
             suffix_non_letters += word[-1]
             word = word[:-1]
 
